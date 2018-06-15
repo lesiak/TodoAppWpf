@@ -34,8 +34,18 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="AddItemButton" Grid.Column="1" Grid.Row="0" Click="AddItemButton_Click" >Add item</Button>
-        <Button Grid.Row="1">Button 4</Button>
+
+        <StackPanel Grid.Column="1" Grid.Row="0"  DockPanel.Dock="Right" Margin="10,0">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="0,0,0,5" />
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock FontWeight="Bold" Margin="0,0,0,10">ListBox selection</TextBlock>
+            <Button x:Name="AddItemButton" Click="AddItemButton_Click" >Add item</Button>
+            <Button Name="ChangeItemButton" Click="ChangeItemButton_Click">Change Item</Button>
+        </StackPanel>
+        <Button Grid.Column="0" Grid.Row="1">Button 4</Button>
         <Button Grid.Column="1" Grid.Row="1">Button 5</Button>
         
         

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,12 @@ namespace TodoAppWpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<TodoItem> items; 
+
         public MainWindow()
         {
             InitializeComponent();
-            var items = new List<TodoItem>
+            items = new ObservableCollection<TodoItem>
             {
                 new TodoItem {Title = "Item1", Details = "Item1 Details"},
                 new TodoItem {Title = "Item2", Details = "Item2 Details"},
@@ -34,7 +37,12 @@ namespace TodoAppWpf
 
         private void AddItemButton_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("AAA");
+            items.Add(new TodoItem {Title = e.ToString(), Details = "AAA"});
+        }
+
+        private void ChangeItemButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
