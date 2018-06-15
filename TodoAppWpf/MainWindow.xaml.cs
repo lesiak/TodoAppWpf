@@ -42,7 +42,15 @@ namespace TodoAppWpf
 
         private void ChangeItemButton_Click(object sender, RoutedEventArgs e)
         {
+            var firstItem = items.Take(1).SingleOrDefault();
+            if (firstItem == null)
+            {
+                Console.WriteLine("No item found");
+                return;
+            }
 
+            Console.WriteLine("AAA");
+            firstItem.Title = "Modified title";
         }
     }
 }
