@@ -57,7 +57,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="TodoItem.cs" />
+    <Compile Include="MVVMHelpers\ObservableObject.cs" />
+    <Compile Include="MVVMHelpers\RelayCommand.cs" />
+    <Compile Include="TodoAppModel.cs" />
+    <Compile Include="Model\TodoItem.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

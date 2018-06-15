@@ -21,36 +21,12 @@ namespace TodoAppWpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<TodoItem> items; 
+       
 
         public MainWindow()
         {
             InitializeComponent();
-            items = new ObservableCollection<TodoItem>
-            {
-                new TodoItem {Title = "Item1", Details = "Item1 Details"},
-                new TodoItem {Title = "Item2", Details = "Item2 Details"},
-                new TodoItem {Title = "Item3", Details = "Item3 Details"}
-            };
-            ItemsListBox.ItemsSource = items;
-        }
-
-        private void AddItemButton_Click(object sender, RoutedEventArgs e)
-        {
-            items.Add(new TodoItem {Title = e.ToString(), Details = "AAA"});
-        }
-
-        private void ChangeItemButton_Click(object sender, RoutedEventArgs e)
-        {
-            var firstItem = items.Take(1).SingleOrDefault();
-            if (firstItem == null)
-            {
-                Console.WriteLine("No item found");
-                return;
-            }
-
-            Console.WriteLine("AAA");
-            firstItem.Title = "Modified title";
+            DataContext = new TodoAppModel();
         }
     }
 }

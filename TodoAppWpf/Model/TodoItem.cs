@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using JetBrains.Annotations;
+using TodoAppWpf.MVVMHelpers;
 
 namespace TodoAppWpf
 {
-    public class TodoItem : INotifyPropertyChanged
+    public class TodoItem : ObservableObject
     {
         private string title;
         private string details;
@@ -39,13 +40,5 @@ namespace TodoAppWpf
             }
         }
 
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

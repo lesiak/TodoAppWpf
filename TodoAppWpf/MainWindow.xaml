@@ -17,7 +17,7 @@
             <RowDefinition Height="1*" />
            
         </Grid.RowDefinitions>
-        <ListBox x:Name="ItemsListBox" Grid.Column="0" Grid.Row="0">
+        <ListBox x:Name="ItemsListBox" Grid.Column="0" Grid.Row="0" ItemsSource="{Binding Items}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
@@ -42,8 +42,8 @@
                 </Style>
             </StackPanel.Resources>
             <TextBlock FontWeight="Bold" Margin="0,0,0,10">ListBox selection</TextBlock>
-            <Button x:Name="AddItemButton" Click="AddItemButton_Click" >Add item</Button>
-            <Button Name="ChangeItemButton" Click="ChangeItemButton_Click">Change Item</Button>
+            <Button x:Name="AddItemButton" Command="{Binding AddItemCommand}" >Add item</Button>
+            <Button Name="ChangeItemButton" Command="{Binding ChangeItemCommand}">Change Item</Button>
         </StackPanel>
         <Button Grid.Column="0" Grid.Row="1">Button 4</Button>
         <Button Grid.Column="1" Grid.Row="1">Button 5</Button>
