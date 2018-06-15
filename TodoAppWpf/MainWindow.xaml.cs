@@ -23,6 +23,18 @@ namespace TodoAppWpf
         public MainWindow()
         {
             InitializeComponent();
+            var items = new List<TodoItem>
+            {
+                new TodoItem {Title = "Item1", Details = "Item1 Details"},
+                new TodoItem {Title = "Item2", Details = "Item2 Details"},
+                new TodoItem {Title = "Item3", Details = "Item3 Details"}
+            };
+            ItemsListBox.ItemsSource = items;
+        }
+
+        private void AddItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("AAA");
         }
     }
 }
